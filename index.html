@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Instagram Anda</title>
+    <!-- Memuat Bootstrap 5 (Satu-satunya kerangka kerja CSS yang digunakan) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- link rel="stylesheet" href="assets/css/custom.css" -->
+    <style>
+        /* Gaya dasar untuk card postingan */
+        .card-post {
+            height: 100%; /* Memastikan tinggi card konsisten */
+            display: flex;
+            flex-direction: column;
+            border: none; /* Hilangkan border default card */
+            cursor: pointer; /* Menambahkan indikasi klik */
+            transition: transform 0.2s, box-shadow 0.2s;
+            border-radius: 0.5rem;
+        }
+        .card-post:hover {
+            transform: translateY(-5px);
+            /* Menggunakan bayangan kustom yang lebih menonjol */
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+        }
+        .card-img-wrapper {
+            width: 100%;
+            padding-bottom: 100%; /* Rasio aspek 1:1, seperti postingan Instagram */
+            position: relative;
+            overflow: hidden;
+            background-color: #f0f0f0; /* Warna fallback jika gambar belum load */
+            border-radius: 0.5rem; /* Tambahkan sedikit sudut membulat */
+        }
+        .card-img-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Memastikan gambar mengisi area tanpa terdistorsi */
+        }
+        .profile-avatar {
+            width: 120px; /* Ukuran avatar default */
+            height: 120px;
+            object-fit: cover;
+        }
+        @media (min-width: 768px) {
+            .profile-avatar {
+                width: 150px; /* Ukuran avatar lebih besar di tablet/desktop */
+                height: 150px;
+            }
+        }
+        /* Membulatkan gambar di dalam wrapper card */
+        .card-post .card-img-wrapper {
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+    <!-- HEADER: Informasi Profil -->
+    <header class="container mt-4 mb-5 p-4 bg-white shadow-sm rounded-4">
+        <div class="row align-items-center">
+            <!-- Kolom Avatar -->
+            <div class="col-4 col-md-3 text-center">
+                <img src="PP.jpg" class="profile-avatar rounded-circle border border-primary border-4" alt="Foto Profil">
+            </div>
+
+            <!-- Kolom Detail Profil -->
+            <div class="col-8 col-md-9">
+                <div class="d-flex flex-column flex-md-row align-items-md-center mb-2">
+                    <h1 class="h3 fw-bold me-md-3 mb-2 mb-md-0">ahmddariii</h1>
+                    <div class="d-grid gap-2 d-md-block order-2 order-md-1">
+                        <!-- Menggunakan btn-primary standar Bootstrap -->
+                        <button class="btn btn-primary rounded-pill fw-bold px-4 shadow-sm">Follow</button>
+                        <!-- Menggunakan btn-outline-secondary standar Bootstrap -->
+                        <button class="btn btn-outline-secondary rounded-pill fw-bold ms-md-2 px-4">Edit Profile</button>
+                    </div>
+                </div>
+
+                <!-- Statistik -->
+                <div class="row text-center text-md-start mb-3">
+                    <div class="col-4 col-md-auto me-md-4"><strong>12</strong> posts</div>
+                    <div class="col-4 col-md-auto me-md-4"><strong>680</strong> followers</div>
+                    <div class="col-4 col-md-auto"><strong>471</strong> following</div>
+                </div>
+
+                <!-- Bio -->
+                <p class="mb-0">
+                    <span class="fw-bold">Web Developer Junior</span><br>
+                    Membangun website responsif dengan Bootstrap 5.<br>
+                    #codingpemula #webdevJR #bootstrap #genZTOP
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <hr class="my-4">
+
+    <!-- MAIN: Galeri Postingan -->
+    <main class="container">
+        <h2 class="h5 fw-bold mb-4 text-center text-md-start text-secondary">Postingan</h2>
+        
+        <!-- Grid Postingan (12 total) -->
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 pb-5">
+            
+            <!-- Postingan 1 -->
+            <div class="col">
+                <div class="card card-post shadow-sm">
+                    <div class="card-img-wrapper">
+                        <img src="IMG1.jpg" class="card-img-top" alt="Postingan 1">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Postingan 2 -->
+            <div class="col">
+                <div class="card card-post shadow-sm">
+                    <div class="card-img-wrapper">
+                        <img src="IMG2.jpg" class="card-img-top" alt="Postingan 2">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Postingan 3 -->
+            <div class="col">
+                <div class="card card-post shadow-sm">
+                    <div class="card-img-wrapper">
+                        <img src="IMG3.jpg" class="card-img-top" alt="Postingan 3">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Postingan 4 -->
+            <div class="col">
+                <div class="card card-post shadow-sm">
+                    <div class="card-img-wrapper">
+                        <img src="IMG4.jpg" class="card-img-top" alt="Postingan 4">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Postingan 5 -->
+            <div class="col">
+                <div class="card card-post shadow-sm">
+                    <div class="card-img-wrapper">
+                        <img src="IMG5.jpg" class="card-img-top" alt="Postingan 5">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Postingan 6 -->
+            <div class="col">
+                <div class="card card-post shadow-sm">
+                    <div class="card-img-wrapper">
+                        <img src="IMG6.jpg" class="card-img-top" alt="Postingan 6">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Postingan 7 -->
+            <div class="col">
+                <div class="card card-post shadow-sm">
+                    <div class="card-img-wrapper">
+                        <img src="IMG7.jpg" class="card-img-top" alt="Postingan 7">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Postingan 8 -->
+            <div class="col">
+                <div class="card card-post shadow-sm">
+                    <div class="card-img-wrapper">
+                        <img src="IMG8.jpg" class="card-img-top" alt="Postingan 8">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Postingan 9 -->
+            <div class="col">
+                <div class="card card-post shadow-sm">
+                    <div class="card-img-wrapper">
+                        <img src="IMG9.jpg" class="card-img-top" alt="Postingan 9">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Postingan 10 -->
+            <div class="col">
+                <div class="card card-post shadow-sm">
+                    <div class="card-img-wrapper">
+                        <img src="IMG10.jpg" class="card-img-top" alt="Postingan 10">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Postingan 11 -->
+            <div class="col">
+                <div class="card card-post shadow-sm">
+                    <div class="card-img-wrapper">
+                        <img src="IMG11.jpg" class="card-img-top" alt="Postingan 11">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Postingan 12 -->
+            <div class="col">
+                <div class="card card-post shadow-sm">
+                    <div class="card-img-wrapper">
+                        <img src="IMG12.jpg" class="card-img-top" alt="Postingan 12">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Script Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

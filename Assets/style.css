@@ -1,1 +1,46 @@
-
+/* Gaya dasar untuk card postingan */
+.card-post {
+    height: 100%; /* Memastikan tinggi card konsisten */
+    display: flex;
+    flex-direction: column;
+    border: none; /* Hilangkan border default card */
+    cursor: pointer; /* Menambahkan indikasi klik */
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 0.5rem;
+}
+.card-post:hover {
+    transform: translateY(-5px);
+    /* Menggunakan bayangan kustom yang lebih menonjol */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+.card-img-wrapper {
+    width: 100%;
+    padding-bottom: 100%; /* Rasio aspek 1:1, seperti postingan Instagram */
+    position: relative;
+    overflow: hidden;
+    background-color: #f0f0f0; /* Warna fallback jika gambar belum load */
+    border-radius: 0.5rem; /* Tambahkan sedikit sudut membulat */
+}
+.card-img-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Memastikan gambar mengisi area tanpa terdistorsi */
+}
+.profile-avatar {
+    width: 120px; /* Ukuran avatar default */
+    height: 120px;
+    object-fit: cover;
+}
+@media (min-width: 768px) {
+    .profile-avatar {
+        width: 150px; /* Ukuran avatar lebih besar di tablet/desktop */
+        height: 150px;
+    }
+}
+/* Membulatkan gambar di dalam wrapper card */
+.card-post .card-img-wrapper {
+    border-radius: 0.5rem;
+}
